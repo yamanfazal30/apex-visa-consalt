@@ -530,3 +530,19 @@ function buildWhatsAppLink(text) {
   setTimeout(() => { if (!panel.classList.contains('open')) hint.classList.add('show'); }, 6000);
   setTimeout(() => hint.classList.remove('show'), 14000);
 })();
+
+
+/* ==========================================================================
+   DYNAMIC URL AGENCY NAME BYPASS (EXACT REPLACEMENT)
+   ========================================================================== */
+(function() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const agencyName = urlParams.get('agency');
+  if (agencyName) {
+    const heading = document.querySelector('h1');
+    if (heading) {
+      heading.innerHTML = `Your Trusted Gateway to <span class="grad-text">${agencyName.replace(/-/g, ' ')}</span>`;
+    }
+  }
+})();
+
